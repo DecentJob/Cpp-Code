@@ -1,0 +1,28 @@
+template<class T>
+class Base
+{
+	T m;
+};
+
+//如果想灵活指定父类中T 的类型，子类也需要变类模板
+template<class T1, class T2>
+class Son:public Base<T2>
+{
+public:
+	Son()
+	{
+		cout << "T1的类型为：" << typeid(T1).name() << endl;
+		cout << "T2的类型为：" << typeid(T2).name() << endl;
+	}
+	T1 obj;
+};
+
+void test01()
+{
+	Son<int, char>S;
+}
+int main()
+{
+	test01();
+	return 0;
+}
