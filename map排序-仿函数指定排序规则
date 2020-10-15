@@ -17,7 +17,7 @@ class myCompare
 {
 public:
 	bool operator()(const Person&p1, const Person&p2)
-	/*bool operator()(int m_Age, string m_Name)*/
+	
 	{
 		return p1.m_Age > p2.m_Age;
 	}
